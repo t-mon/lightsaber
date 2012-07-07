@@ -7,17 +7,17 @@
 class LightsaberSettings : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int lightsaberSensitivityHit READ getsensitivityHit WRITE setsensitivityHit NOTIFY sensitivityHitChanged)
+    Q_PROPERTY(int lightsaberSensitivityHit READ lightsaberSensitivityHit WRITE setlightsaberSensitivityHit NOTIFY lightsaberSensitivityHitChanged())
     Q_PROPERTY(bool keepDisplayOn READ isDisplayStateOn WRITE setDisplayStateOn NOTIFY keepDisplayOnChanged())
     Q_PROPERTY(bool showStatusBar READ isShowStatusBarOn WRITE setShowStatusBar NOTIFY showStatusBarChanged())
+    Q_PROPERTY(QString lightsaberColor READ lightsaberColor WRITE setLightsaberColor NOTIFY lightsaberColorChanged())
 
 
 public:
     explicit LightsaberSettings(QObject *parent = 0);
     
-    int getsensitivityHit() const;
-    int sensitivityHit() const;
-    void setsensitivityHit(int sensitivity);
+    int lightsaberSensitivityHit() const;
+    void setlightsaberSensitivityHit(int sensitivity);
 
     bool isDisplayStateOn();
     bool keepDisplayOn() const;
@@ -27,17 +27,22 @@ public:
     bool showStatusBar() const;
     void setShowStatusBar(const bool &showStatusBar);
 
+    QString lightsaberColor() const;
+    void setLightsaberColor(QString color);
 
 signals:
-    void sensitivityHitChanged(int sensitivityHit);
+    void lightsaberSensitivityHitChanged(int sensitivity);
     void keepDisplayOnChanged();
     void showStatusBarChanged();
+    void lightsaberColorChanged();
 
 private:
     QSettings *m_settings;
     //int sensitivitySwing() const;
     
-public slots:
+private slots:
+
+
     
 };
 

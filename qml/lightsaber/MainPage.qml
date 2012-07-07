@@ -13,7 +13,7 @@ Page {
 
     orientationLock: PageOrientation.LockPortrait
 
-    property string lightsabercolor : "red"
+    property string lightsabercolor : lightsaberSettings.lightsaberColor
 
     Column {
         spacing: 2
@@ -22,7 +22,7 @@ Page {
         Rectangle {
             id: lightsaberRectangle
             width: 200
-            height: 600
+            height: 650
             //radius: 6
             anchors.horizontalCenter: parent.horizontalCenter
 

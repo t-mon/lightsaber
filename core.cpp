@@ -10,7 +10,7 @@ Core::Core(QObject *parent) :
     m_soundeffects = new Soundeffects(this);
     m_settings = new LightsaberSettings(this);
 
-    sensitivityHit = m_settings->getsensitivityHit();
+    sensitivityHit = m_settings->lightsaberSensitivityHit();
     sensitivitySwing = 3;
 
     //Sound connectons
@@ -18,7 +18,7 @@ Core::Core(QObject *parent) :
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
 
     connect(m_accelerometer,SIGNAL(accelerometerDataReady(qreal,qreal,qreal)),this,SLOT(detectLightsaberMove(qreal,qreal,qreal)));
-    connect(m_settings,SIGNAL(sensitivityHitChanged(int)),this,SLOT(lightsaberSensitivityHitChanged(int)));
+    connect(m_settings,SIGNAL(lightsaberSensitivityHitChanged(int)),this,SLOT(on_lightsaberSensitivityHitChanged(int)));
 }
 
 void Core::setlightsaberPowerStatus(bool status)
@@ -67,8 +67,9 @@ void Core::on_lightsaberPowerChanged()
 
 }
 
-void Core::lightsaberSensitivityHitChanged(int sensitivity)
+void Core::on_lightsaberSensitivityHitChanged(int sensitivity)
 {
     sensitivityHit = sensitivity;
-    qDebug() << "test";
+    qDebug() << "test changed sens hot";
 }
+

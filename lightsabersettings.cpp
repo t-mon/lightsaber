@@ -5,28 +5,28 @@ LightsaberSettings::LightsaberSettings(QObject *parent) :
 {
     m_settings = new QSettings("lightsaber");
 }
-void LightsaberSettings::setsensitivityHit(int sensitivity)
+
+int LightsaberSettings::lightsaberSensitivityHit() const
 {
-    m_settings->setValue("hit_sensitivity",sensitivity);
-    qDebug() << "hit-sensitivity set to" << sensitivity;
-    emit sensitivityHitChanged(sensitivity);
+    return m_settings->value("LightsaberSensitivityHit").toInt();
 }
 
-int LightsaberSettings::getsensitivityHit() const
+void LightsaberSettings::setlightsaberSensitivityHit(int sensitivity)
 {
-    return m_settings->value("hit_sensitivity",10).toInt();
-}
-
-
-void LightsaberSettings::setDisplayStateOn(const bool &displaySuspandState){
-    m_settings->setValue("DisplayAutoSuspend", displaySuspandState);
-    qDebug() << "Display Settings Value changed to:" << displaySuspandState;
-    emit keepDisplayOnChanged();
+    m_settings->setValue("LightsaberSensitivityHit", sensitivity);
+    qDebug() << "hit-sensitivitiy changed to " << sensitivity;
+    emit lightsaberSensitivityHitChanged(sensitivity);
 }
 
 bool LightsaberSettings::isShowStatusBarOn()
 {
     return m_settings->value("ShowStatusBar", true).toBool();
+}
+
+void LightsaberSettings::setDisplayStateOn(const bool &displaySuspandState){
+    m_settings->setValue("DisplayAutoSuspend", displaySuspandState);
+    qDebug() << "Display Settings Value changed to:" << displaySuspandState;
+    emit keepDisplayOnChanged();
 }
 
 bool LightsaberSettings::isDisplayStateOn(){
@@ -40,3 +40,17 @@ void LightsaberSettings::setShowStatusBar(const bool &showStatusBar)
     emit showStatusBarChanged();
 
 }
+
+QString LightsaberSettings::lightsaberColor() const
+{
+    return m_settings->value("Lightsaber_color", "blue").toString();
+}
+
+void LightsaberSettings::setLightsaberColor(QString color)
+{
+    m_settings->setValue("Lightsaber_color", color);
+    qDebug() << "Lightsabercolor changed to " << color;
+    emit lightsaberColorChanged();
+}
+
+
