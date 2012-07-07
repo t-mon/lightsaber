@@ -36,7 +36,7 @@ signals:
 private slots:
     void detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z);
     void on_lightsaberPowerChanged();
-    void lightsaberSensitivityHitChanged(const int &sensitivity);
+    void lightsaberSensitivityHitChanged(int sensitivity);
 
 };
 

@@ -7,7 +7,7 @@
 class LightsaberSettings : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int lightsaberSensitivityHit READ getsensitivityHit WRITE setsensitivityHit)
+    Q_PROPERTY(int lightsaberSensitivityHit READ getsensitivityHit WRITE setsensitivityHit NOTIFY sensitivityHitChanged)
     Q_PROPERTY(bool keepDisplayOn READ isDisplayStateOn WRITE setDisplayStateOn NOTIFY keepDisplayOnChanged())
     Q_PROPERTY(bool showStatusBar READ isShowStatusBarOn WRITE setShowStatusBar NOTIFY showStatusBarChanged())
 
@@ -15,9 +15,9 @@ class LightsaberSettings : public QObject
 public:
     explicit LightsaberSettings(QObject *parent = 0);
     
-    int getsensitivityHit();
+    int getsensitivityHit() const;
     int sensitivityHit() const;
-    void setsensitivityHit(const int &sensitivity);
+    void setsensitivityHit(int sensitivity);
 
     bool isDisplayStateOn();
     bool keepDisplayOn() const;
@@ -29,7 +29,7 @@ public:
 
 
 signals:
-    void sensitivityHitChanged(const int &sensitivityHit);
+    void sensitivityHitChanged(int sensitivityHit);
     void keepDisplayOnChanged();
     void showStatusBarChanged();
 

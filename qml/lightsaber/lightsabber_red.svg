@@ -14,8 +14,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="lightsabber.svg"
-   inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber.png"
+   sodipodi:docname="lightsabber_red.svg"
+   inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber_blue.png"
    inkscape:export-xdpi="103.23188"
    inkscape:export-ydpi="103.23188">
   <defs
@@ -82,9 +82,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.60534535"
-     inkscape:cx="147.67684"
-     inkscape:cy="453.84607"
+     inkscape:zoom="1.3100052"
+     inkscape:cx="-50.795659"
+     inkscape:cy="755.01903"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -92,7 +92,7 @@
      inkscape:window-height="752"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -111,7 +111,7 @@
      id="layer1"
      transform="translate(0,-152.36218)">
     <rect
-       style="opacity:0.5251572;fill:#025dbf;fill-opacity:1;stroke:#395cff;stroke-width:0.1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3775)"
+       style="opacity:0.52515719999999999;fill:#bd0000;fill-opacity:1;stroke:#395cff;stroke-width:0.10000000000000001;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3775)"
        id="rect2985"
        width="18.44688"
        height="104.50002"
@@ -124,7 +124,7 @@
        inkscape:export-xdpi="120.90221"
        inkscape:export-ydpi="120.90221" />
     <rect
-       style="opacity:0.5251572;fill:#025dbf;fill-opacity:1;stroke:#395cff;stroke-width:0.09861641;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3809)"
+       style="opacity:0.52515719999999999;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.09861641000000000;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3809)"
        id="rect3803"
        width="5.8767262"
        height="99.876053"

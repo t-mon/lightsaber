@@ -14,38 +14,12 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="lightsabber.svg"
+   sodipodi:docname="lightsabber_off.svg"
    inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber.png"
    inkscape:export-xdpi="103.23188"
    inkscape:export-ydpi="103.23188">
   <defs
      id="defs4">
-    <filter
-       inkscape:collect="always"
-       id="filter3775"
-       x="-0.17051964"
-       width="1.3410393"
-       y="-0.030798698"
-       height="1.0615973"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="1.3351451"
-         id="feGaussianBlur3777" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter3809"
-       x="-0.21594223"
-       width="1.4318845"
-       y="-0.012706082"
-       height="1.0254122"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.5287639"
-         id="feGaussianBlur3811" />
-    </filter>
     <filter
        inkscape:collect="always"
        id="filter3804">
@@ -101,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -110,29 +84,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-152.36218)">
-    <rect
-       style="opacity:0.5251572;fill:#025dbf;fill-opacity:1;stroke:#395cff;stroke-width:0.1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3775)"
-       id="rect2985"
-       width="18.44688"
-       height="104.50002"
-       x="18.104166"
-       y="4.125"
-       transform="matrix(5.222121,0,0,-6.6973073,4.9687707,906.69693)"
-       rx="8.2928591"
-       ry="15.354173"
-       inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber_off.png"
-       inkscape:export-xdpi="120.90221"
-       inkscape:export-ydpi="120.90221" />
-    <rect
-       style="opacity:0.5251572;fill:#025dbf;fill-opacity:1;stroke:#395cff;stroke-width:0.09861641;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3809)"
-       id="rect3803"
-       width="5.8767262"
-       height="99.876053"
-       x="22.228304"
-       y="950.6535"
-       rx="4.20117"
-       ry="5.8750677"
-       transform="matrix(7.8489777,0,0,6.8809354,-49.880878,-6353.6167)" />
     <rect
        style="opacity:0.93396229;fill:#808080;fill-opacity:1;stroke:#000000;stroke-width:4.78599977;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3851"
@@ -143,7 +94,7 @@
        rx="19.85972"
        ry="15.987421" />
     <rect
-       style="opacity:0.93396228999999997;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4180)"
+       style="opacity:0.93396228999999997;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4180)"
        id="rect3857"
        width="20.465775"
        height="20.22472"

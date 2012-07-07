@@ -5,14 +5,14 @@ LightsaberSettings::LightsaberSettings(QObject *parent) :
 {
     m_settings = new QSettings("lightsaber");
 }
-void LightsaberSettings::setsensitivityHit(const int &sensitivity)
+void LightsaberSettings::setsensitivityHit(int sensitivity)
 {
     m_settings->setValue("hit_sensitivity",sensitivity);
     qDebug() << "hit-sensitivity set to" << sensitivity;
     emit sensitivityHitChanged(sensitivity);
 }
 
-int LightsaberSettings::getsensitivityHit()
+int LightsaberSettings::getsensitivityHit() const
 {
     return m_settings->value("hit_sensitivity",10).toInt();
 }
@@ -36,7 +36,7 @@ bool LightsaberSettings::isDisplayStateOn(){
 void LightsaberSettings::setShowStatusBar(const bool &showStatusBar)
 {
     m_settings->setValue("ShowStatusBar", showStatusBar);
-    qDebug() << "Statusbar Settings Value changed to:" << showStatusBar;
+    qDebug() << "Show statusbar settings value changed to:" << showStatusBar;
     emit showStatusBarChanged();
 
 }

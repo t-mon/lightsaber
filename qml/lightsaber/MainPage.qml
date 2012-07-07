@@ -13,7 +13,7 @@ Page {
 
     orientationLock: PageOrientation.LockPortrait
 
-    property string title : "Lightsaber"
+    property string lightsabercolor : "red"
 
     Column {
         spacing: 2
@@ -31,7 +31,7 @@ Page {
             Image {
                 id: lightsaberImage
                 anchors.fill: parent
-                source: "lightsabber.png"
+                source: "lightsabber_" + lightsabercolor + ".png"
                 visible: startButton.checked
             }
             Image {

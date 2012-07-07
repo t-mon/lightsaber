@@ -11,6 +11,7 @@ Core::Core(QObject *parent) :
     m_settings = new LightsaberSettings(this);
 
     sensitivityHit = m_settings->getsensitivityHit();
+    sensitivitySwing = 3;
 
     //Sound connectons
     connect(this,SIGNAL(lightsaberMoved(QString)),m_soundeffects,SLOT(playSaberEffect(QString)));
@@ -66,7 +67,7 @@ void Core::on_lightsaberPowerChanged()
 
 }
 
-void Core::lightsaberSensitivityHitChanged(const int &sensitivity)
+void Core::lightsaberSensitivityHitChanged(int sensitivity)
 {
     sensitivityHit = sensitivity;
     qDebug() << "test";
