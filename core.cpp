@@ -12,7 +12,7 @@ Core::Core(QObject *parent) :
     m_settings = new LightsaberSettings(this);
     m_vibration = new Vibration(this);
 
-    sensitivityHit = m_settings->lightsaberSensitivityHit();
+    sensitivityHit = 14;
     sensitivitySwing = 3;
 
     swing = 0;
@@ -59,7 +59,6 @@ void Core::detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z)
         //qDebug() << "lightsaber no movement";
     }
 
-
     accel_x = x;
     accel_y = y;
     accel_z = z;
@@ -67,9 +66,9 @@ void Core::detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z)
 
 
 
-void Core::on_lightsaberSensitivityHitChanged(int sensitivity)
+void Core::on_lightsaberSensitivityHitChanged(const int &sensitivity)
 {
     sensitivityHit = sensitivity;
-    qDebug() << "test changed sens hot";
+    qDebug() << "test changed sens hit";
 }
 

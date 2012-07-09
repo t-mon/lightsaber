@@ -41,7 +41,7 @@ Page {
             }
 
             Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
                 text: "Lightsaber hit-sensitivity"
             }
 
@@ -60,7 +60,7 @@ Page {
             }
 
             Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
                 text: "Lightsaber swing-sensitivity"
             }
 

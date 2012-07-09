@@ -35,12 +35,12 @@ private:
 
 
 signals:
-    void lightsaberMoved(const int swingOrHit);
+    void lightsaberMoved(const int &swingOrHit);
     void lightsaberPowerChanged(const bool &lightsaberPower);
     
 private slots:
     void detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z);
-    void on_lightsaberSensitivityHitChanged(int sensitivity);
+    void on_lightsaberSensitivityHitChanged(const int &sensitivity);
 
 };
 

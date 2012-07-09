@@ -33,7 +33,8 @@ void LightsaberSettings::setDisplayStateOn(const bool &displaySuspandState){
     emit keepDisplayOnChanged();
 }
 
-bool LightsaberSettings::isDisplayStateOn(){
+bool LightsaberSettings::isDisplayStateOn()
+{
     return m_settings->value("DisplayAutoSuspend", true).toBool();
 }
 
