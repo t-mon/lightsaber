@@ -15,11 +15,15 @@ private:
     QMediaPlayer m_player_background;
     QMediaPlaylist * playlist;
     bool lightsaberPowerStatus;
+    int swing;
+    int hit;
 
 signals:
+    void playHitsound();
+    void playSwingsound();
     
 public slots:
-    void playSaberEffect(const QString &soundfile);
+    void playSaberEffect(const int &swingOrHit);
     void playOnOffSound(const bool &lightsaberPower);
 };
 

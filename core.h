@@ -5,6 +5,7 @@
 #include "accelerometer.h"
 #include "soundeffects.h"
 #include "lightsabersettings.h"
+#include "vibration.h"
 
 class Core : public QObject
 {
@@ -22,20 +23,23 @@ private:
     Accelerometer *m_accelerometer;
     Soundeffects *m_soundeffects;
     LightsaberSettings *m_settings;
+    Vibration *m_vibration;
     qreal accel_x;
     qreal accel_y;
     qreal accel_z;
     int sensitivityHit;
     int sensitivitySwing;
 
+    int swing;
+    int hit;
+
 
 signals:
-    void lightsaberMoved(const QString &soundfile);
+    void lightsaberMoved(const int swingOrHit);
     void lightsaberPowerChanged(const bool &lightsaberPower);
     
 private slots:
     void detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z);
-    void on_lightsaberPowerChanged();
     void on_lightsaberSensitivityHitChanged(int sensitivity);
 
 };

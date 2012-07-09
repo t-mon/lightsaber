@@ -6,13 +6,16 @@ DEPLOYMENTFOLDERS = folder_01
 # Additional import path used to resolve QML modules in Creator's code model
 QML_IMPORT_PATH =
 
-CONFIG += mobility
-MOBILITY += multimedia sensors
+CONFIG += mobility qdeclarative-boostable
+MOBILITY += multimedia sensors feedback
 
 symbian:TARGET.UID3 = 0xE4566FF6
 
 #my soundefects
-soundFile.files =
+
+INSTALLS += soundeffects
+soundeffects.files = soundeffects
+soundeffects.path = /opt/lightsaber
 
 
 # Smart Installer package's UID
@@ -27,11 +30,11 @@ symbian:TARGET.CAPABILITY += NetworkServices
 
 # If your application uses the Qt Mobility libraries, uncomment the following
 # lines and add the respective components to the MOBILITY variable.
-CONFIG += mobility
+#CONFIG += mobility
 # MOBILITY +=
 
 # Speed up launching on MeeGo/Harmattan when using applauncherd daemon
-CONFIG += qdeclarative-boostable
+#CONFIG += qdeclarative-boostable mobility
 
 # Add dependency to Symbian components
 # CONFIG += qt-components
@@ -41,7 +44,8 @@ SOURCES += main.cpp \
     core.cpp \
     accelerometer.cpp \
     soundeffects.cpp \
-    lightsabersettings.cpp
+    lightsabersettings.cpp \
+    vibration.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -60,4 +64,5 @@ HEADERS += \
     core.h \
     accelerometer.h \
     soundeffects.h \
-    lightsabersettings.h
+    lightsabersettings.h \
+    vibration.h

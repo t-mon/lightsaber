@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <QDebug>
 
+
 Core::Core(QObject *parent) :
     QObject(parent)
 {
@@ -9,13 +10,21 @@ Core::Core(QObject *parent) :
     m_accelerometer = new Accelerometer(this);
     m_soundeffects = new Soundeffects(this);
     m_settings = new LightsaberSettings(this);
+    m_vibration = new Vibration(this);
 
     sensitivityHit = m_settings->lightsaberSensitivityHit();
     sensitivitySwing = 3;
 
+    swing = 0;
+    hit = 1;
+
     //Sound connectons
-    connect(this,SIGNAL(lightsaberMoved(QString)),m_soundeffects,SLOT(playSaberEffect(QString)));
+    connect(this,SIGNAL(lightsaberMoved(int)),m_soundeffects,SLOT(playSaberEffect(int)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
+    connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_vibration,SLOT(startstopVibration(bool)));
+
+    connect(m_soundeffects,SIGNAL(playHitsound()),m_vibration,SLOT(hitVibration()));
+    connect(m_soundeffects,SIGNAL(playSwingsound()),m_vibration,SLOT(swingVibration()));
 
     connect(m_accelerometer,SIGNAL(accelerometerDataReady(qreal,qreal,qreal)),this,SLOT(detectLightsaberMove(qreal,qreal,qreal)));
     connect(m_settings,SIGNAL(lightsaberSensitivityHitChanged(int)),this,SLOT(on_lightsaberSensitivityHitChanged(int)));
@@ -41,10 +50,10 @@ void Core::detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z)
 {
 
     if( (x-accel_x > abs(sensitivityHit)) || (y-accel_y > abs(sensitivityHit)) || (z-accel_z > abs(sensitivityHit)) ){
-        emit lightsaberMoved("/home/user/lightsaber/ltsaberhit01.wav");
+        emit lightsaberMoved(hit);
         qDebug() << "lightsaber hit";
     }else if((x-accel_x > abs(sensitivitySwing)) || (y-accel_y > abs(sensitivitySwing)) || (z-accel_z > abs(sensitivitySwing))){
-        emit lightsaberMoved("/home/user/lightsaber/SlowSabr.wav");
+        emit lightsaberMoved(swing);
         qDebug() << "lightsaber slow movement";
     }else{
         //qDebug() << "lightsaber no movement";
@@ -56,16 +65,7 @@ void Core::detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z)
     accel_z = z;
 }
 
-void Core::on_lightsaberPowerChanged()
-{
-    qDebug() << "Lightsaber Power Status changed to " << lightsaberPowerStatus;
-    if(lightsaberPowerStatus){
-        emit lightsaberMoved("/home/user/lightsaber/ltsaberon01.wav");
-    } else {
-        emit lightsaberMoved("/home/user/lightsaber/ltsaberoff01.wav");
-    }
 
-}
 
 void Core::on_lightsaberSensitivityHitChanged(int sensitivity)
 {
