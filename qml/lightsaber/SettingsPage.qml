@@ -8,7 +8,7 @@ Page {
     tools: commonTools
 
     ScreenSaver {
-        screenSaverInhibited: true
+        screenSaverInhibited: lightsaberSettings.keepDisplayOn
     }
 
 
@@ -52,7 +52,7 @@ Page {
                 minimumValue: 8
                 stepSize: 1
                 valueIndicatorVisible: true
-                onValueChanged: lightsaberSettings.lightsaberSensitivityHit
+                onValueChanged: lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
 
             }
 

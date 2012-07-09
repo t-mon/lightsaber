@@ -8,11 +8,11 @@
 Soundeffects::Soundeffects(QObject *parent) :
     QObject(parent)
 {    
-    playlist = new QMediaPlaylist(this);
-    playlist->addMedia(QUrl::fromLocalFile("/home/user/lightsaber/Hum 4.wav"));
-    playlist->setPlaybackMode( QMediaPlaylist::Loop );
-    m_player_background.setPlaylist(playlist);
-    m_player_background.setVolume(100);
+//    playlist = new QMediaPlaylist(this);
+//    playlist->addMedia(QUrl::fromLocalFile("/home/user/lightsaber/Hum 4.wav"));
+//    playlist->setPlaybackMode( QMediaPlaylist::Loop );
+//    m_player_background.setPlaylist(playlist);
+//    m_player_background.setVolume(100);
     lightsaberPowerStatus = false;
     swing = 0;
     hit = 1;

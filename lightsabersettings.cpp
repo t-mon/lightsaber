@@ -1,10 +1,14 @@
 #include "lightsabersettings.h"
 #include <QDebug>
+
+
 LightsaberSettings::LightsaberSettings(QObject *parent) :
     QObject(parent)
 {
     m_settings = new QSettings("lightsaber");
 }
+
+
 
 int LightsaberSettings::lightsaberSensitivityHit() const
 {
