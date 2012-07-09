@@ -36,6 +36,12 @@ Page {
                 checked: lightsaberSettings.showStatusBar
                 onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
+            CheckBox{
+                id: vibrationState
+                text: vibrationState.checked ? "Vibration On" : "Vibration Off"
+                checked: lightsaberSettings.vibrationOnOff
+                onCheckedChanged: lightsaberSettings.vibrationOnOff = vibrationState.checked
+            }
 
             SettingsSeparator{
             }

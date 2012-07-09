@@ -11,6 +11,7 @@ class LightsaberSettings : public QObject
     Q_PROPERTY(bool keepDisplayOn READ isDisplayStateOn WRITE setDisplayStateOn NOTIFY keepDisplayOnChanged())
     Q_PROPERTY(bool showStatusBar READ isShowStatusBarOn WRITE setShowStatusBar NOTIFY showStatusBarChanged())
     Q_PROPERTY(QString lightsaberColor READ lightsaberColor WRITE setLightsaberColor NOTIFY lightsaberColorChanged())
+    Q_PROPERTY(bool vibrationOnOff READ vibrationOnOff WRITE setVibrationOnOff NOTIFY vibrationOnOffChanged())
 
 
 public:
@@ -30,17 +31,22 @@ public:
     QString lightsaberColor() const;
     void setLightsaberColor(QString color);
 
+    bool vibrationOnOff();
+    void setVibrationOnOff(const bool &vibrationOnOff);
+
+
 signals:
     void lightsaberHitSensChanged();
     void lightsaberSensitivityHitChanged(int sensitivity);
     void keepDisplayOnChanged();
     void showStatusBarChanged();
     void lightsaberColorChanged();
+    void vibrationOnOffChanged();
 
 private:
     QSettings *m_settings;
     //int sensitivitySwing() const;
-    
+
 private slots:
 
 

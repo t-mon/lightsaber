@@ -3,11 +3,13 @@
 Vibration::Vibration(QObject *parent) :
     QObject(parent)
 {
+    m_settings = new QSettings("lightsaber");
 
 }
 
 void Vibration::powerOnVibration()
 {
+
     m_rumble.setAttackIntensity(1);
     m_rumble.setAttackTime(1000);
     m_rumble.setIntensity(0.005);
@@ -56,10 +58,15 @@ void Vibration::startstopVibration(const bool &powerstate)
 {
     if(powerstate){
         m_rumble.stop();
-        powerOnVibration();
+        if(m_settings->value("Vibration").toBool()){
+            powerOnVibration();
+        }
+
     } else {
         m_rumble.stop();
-        powerOffVibration();
+        if(m_settings->value("Vibration").toBool()){
+            powerOffVibration();
+        }
     }
 }
 

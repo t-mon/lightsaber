@@ -2,17 +2,14 @@
 #include <QAudioFormat>
 #include <QMediaPlaylist>
 #include <QMediaPlayer>
-
+#include <QSettings>
 
 
 Soundeffects::Soundeffects(QObject *parent) :
     QObject(parent)
 {    
-//    playlist = new QMediaPlaylist(this);
-//    playlist->addMedia(QUrl::fromLocalFile("/home/user/lightsaber/Hum 4.wav"));
-//    playlist->setPlaybackMode( QMediaPlaylist::Loop );
-//    m_player_background.setPlaylist(playlist);
-//    m_player_background.setVolume(100);
+
+    m_settings = new QSettings("lightsaber");
     lightsaberPowerStatus = false;
     swing = 0;
     hit = 1;
@@ -30,13 +27,17 @@ void Soundeffects::playSaberEffect(const int &swingOrHit)
                 m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/hit2.wav"));
                 m_player.setVolume(100);
                 m_player.play();
-                emit playHitsound();
+                if(m_settings->value("Vibration").toBool()){
+                    emit playHitsound();
+                }
             }
             if(swingOrHit == swing){
                 m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/swing.wav"));
                 m_player.setVolume(100);
                 m_player.play();
-                emit playSwingsound();
+                if(m_settings->value("Vibration").toBool()){
+                    emit playSwingsound();
+                }
             }
         }
     }
@@ -60,3 +61,4 @@ void Soundeffects::playOnOffSound(const bool &lightsaberPower)
 
     }
 }
+

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QMediaPlayer>
+#include <QSettings>
 
 class Soundeffects : public QObject
 {
@@ -12,11 +13,13 @@ public:
     
 private:
     QMediaPlayer m_player;
-    QMediaPlayer m_player_background;
-    QMediaPlaylist * playlist;
+    QSettings *m_settings;
+
     bool lightsaberPowerStatus;
     int swing;
     int hit;
+    bool vibrationStatusOnOff;
+
 
 signals:
     void playHitsound();

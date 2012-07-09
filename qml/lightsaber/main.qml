@@ -65,6 +65,7 @@ PageStackWindow {
                 text: qsTr("Settings")
                 onClicked: {
                     pageStack.push(settingsPage)
+
                 }
             }
 

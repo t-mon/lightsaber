@@ -57,4 +57,16 @@ void LightsaberSettings::setLightsaberColor(QString color)
     emit lightsaberColorChanged();
 }
 
+bool LightsaberSettings::vibrationOnOff()
+{
+    return m_settings->value("Vibration", true).toBool();
+}
+
+void LightsaberSettings::setVibrationOnOff(const bool &vibrationOnOff)
+{
+    m_settings->setValue("Vibration", vibrationOnOff);
+    qDebug() << "Vibration changed to " << vibrationOnOff;
+    emit vibrationOnOffChanged();
+}
+
 

@@ -24,6 +24,7 @@ private:
     Soundeffects *m_soundeffects;
     LightsaberSettings *m_settings;
     Vibration *m_vibration;
+
     qreal accel_x;
     qreal accel_y;
     qreal accel_z;

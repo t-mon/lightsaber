@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QFeedbackHapticsEffect>
+#include <QSettings>
 
 QTM_USE_NAMESPACE
 
@@ -17,7 +18,7 @@ public:
 
 private:
     QFeedbackHapticsEffect m_rumble;
-
+    QSettings *m_settings;
     
 public slots:
     void powerOnVibration();
