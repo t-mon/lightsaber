@@ -9,7 +9,6 @@ LightsaberSettings::LightsaberSettings(QObject *parent) :
 }
 
 
-
 int LightsaberSettings::lightsaberSensitivityHit() const
 {
     return m_settings->value("LightsaberSensitivityHit").toInt();

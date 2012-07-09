@@ -27,7 +27,7 @@ void Soundeffects::playSaberEffect(const int &swingOrHit)
             qDebug() << "still playing sound";
         }else{
             if(swingOrHit == hit){
-                m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/hit.wav"));
+                m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/hit2.wav"));
                 m_player.setVolume(100);
                 m_player.play();
                 emit playHitsound();

@@ -42,6 +42,7 @@ PageStackWindow {
                 myMenu.open();
             }
         }
+
     }
 
     QueryDialog {

@@ -10,7 +10,7 @@ Item {
         anchors.fill: parent
         radius: 30
         border.color: lightsaberSettings.lightsaberColor == colorButton.color ? "white" : "gray"
-        border.width: 5
+        border.width: lightsaberSettings.lightsaberColor == colorButton.color ? 7 : 5
         color: colorButton.color
 
         MouseArea {
