@@ -33,7 +33,7 @@ private:
 
 signals:
     void accelerometerDataReady(const qreal &x, const qreal &y, const qreal &z);
-    void MovementChanged(Movement movement);
+    void movementChanged(Accelerometer::Movement movement);
 
 private slots:
     void accelerometerChanged();

@@ -15,7 +15,7 @@ Core::Core(QObject *parent) :
 
     //Sound connectons
     //connect(this,SIGNAL(lightsaberMoved(int)),m_soundeffects,SLOT(playSaberEffect(int)));
-    connect(m_accelerometer,SIGNAL(MovementChanged(Movement)),this,SLOT(lightsaberMovementRecognized(Accelerometer::Movement)));
+    connect(m_accelerometer,SIGNAL(movementChanged(Accelerometer::Movement)),this,SLOT(lightsaberMovementRecognized(Accelerometer::Movement)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_vibration,SLOT(startstopVibration(bool)));
 
@@ -42,8 +42,11 @@ void Core::lightsaberMovementRecognized(Accelerometer::Movement movement)
     switch(movement){
         case Accelerometer::MovementHit:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectHit);
+            qDebug() << "------------hit";
         case Accelerometer::MovementSwing:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
+            qDebug() << "------------swing";
+
     }
 
 }

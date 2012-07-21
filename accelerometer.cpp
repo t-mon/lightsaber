@@ -35,10 +35,10 @@ void Accelerometer::detectLightsaberMove(const qreal &x, const qreal &y, const q
 {
 
     if( (x-accel_x > abs(sensitivityHit)) || (y-accel_y > abs(sensitivityHit)) || (z-accel_z > abs(sensitivityHit)) ){
-        emit MovementChanged(MovementHit);
+        emit movementChanged(MovementHit);
         qDebug() << "lightsaber hit -> with sensitivityvalue: " << sensitivityHit;
     }else if((x-accel_x > abs(sensitivitySwing)) || (y-accel_y > abs(sensitivitySwing)) || (z-accel_z > abs(sensitivitySwing))){
-        emit MovementChanged(MovementSwing);
+        emit movementChanged(MovementSwing);
         qDebug() << "lightsaber slow movement  -> with sensitivityvalue: " << sensitivitySwing;
     }else{
         //qDebug() << "lightsaber no movement";

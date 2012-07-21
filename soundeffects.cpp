@@ -9,10 +9,8 @@ Soundeffects::Soundeffects(QObject *parent) :
     QObject(parent)
 {    
 
-    m_settings = new QSettings("lightsaber",QString(),this);
     lightsaberPowerStatus = false;
-    swing = 0;
-    hit = 1;
+
 
 }
 
@@ -28,16 +26,12 @@ void Soundeffects::playSaberEffect(SoundEffect soundEffect)
                 m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/hit2.wav"));
                 m_player.setVolume(100);
                 m_player.play();
-                if(m_settings->value("Vibration").toBool()){
-                    emit playHitsound();
-                }
+                emit playHitsound();
             case SoundEffectSwing:
                 m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/swing.wav"));
                 m_player.setVolume(100);
                 m_player.play();
-                if(m_settings->value("Vibration").toBool()){
-                    emit playSwingsound();
-                }
+                emit playSwingsound();
             }
         }
     }

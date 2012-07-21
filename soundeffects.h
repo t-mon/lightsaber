@@ -20,11 +20,8 @@ public:
 
 private:
     QMediaPlayer m_player;
-    QSettings *m_settings;
 
     bool lightsaberPowerStatus;
-    int swing;
-    int hit;
     bool vibrationStatusOnOff;
 
 
