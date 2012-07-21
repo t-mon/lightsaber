@@ -27,11 +27,13 @@ void Soundeffects::playSaberEffect(SoundEffect soundEffect)
                 m_player.setVolume(100);
                 m_player.play();
                 emit playHitsound();
+                break;
             case SoundEffectSwing:
                 m_player.setMedia(QUrl::fromLocalFile("/opt/lightsaber/soundeffects/swing.wav"));
                 m_player.setVolume(100);
                 m_player.play();
                 emit playSwingsound();
+                break;
             }
         }
     }

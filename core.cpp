@@ -43,9 +43,11 @@ void Core::lightsaberMovementRecognized(Accelerometer::Movement movement)
         case Accelerometer::MovementHit:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectHit);
             qDebug() << "------------hit";
+            break;
         case Accelerometer::MovementSwing:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
             qDebug() << "------------swing";
+            break;
 
     }
 
