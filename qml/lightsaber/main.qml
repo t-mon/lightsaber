@@ -65,7 +65,7 @@ PageStackWindow {
                 text: qsTr("Settings")
                 onClicked: {
                     pageStack.push(settingsPage)
-
+                    core.lightsaberPower = false
                 }
             }
 

@@ -10,12 +10,12 @@
 class Core : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool lightsaberPower READ getlightsaberPowerStatus WRITE setlightsaberPowerStatus)
+    Q_PROPERTY(bool lightsaberPower READ lightsaberPower WRITE setlightsaberPowerStatus)
 
 public:
     explicit Core(QObject *parent = 0);
     void setlightsaberPowerStatus(bool status);
-    bool getlightsaberPowerStatus();
+    bool lightsaberPower();
 
     bool lightsaberPowerStatus;
 

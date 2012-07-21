@@ -22,17 +22,18 @@ public:
 
     bool isDisplayStateOn();
     bool keepDisplayOn() const;
-    void setDisplayStateOn(const bool &displaySuspandState);
+    void setDisplayStateOn(bool displaySuspandState);
 
     bool isShowStatusBarOn();
     bool showStatusBar() const;
-    void setShowStatusBar(const bool &showStatusBar);
+    void setShowStatusBar(bool showStatusBar);
 
     QString lightsaberColor() const;
     void setLightsaberColor(QString color);
 
     bool vibrationOnOff();
-    void setVibrationOnOff(const bool &vibrationOnOff);
+    void setVibrationOnOff(bool vibrationOnOff);
+
 
 
 signals:

@@ -32,13 +32,13 @@ Page {
                 id: lightsaberImage
                 anchors.fill: parent
                 source: "lightsabber_" + lightsabercolor + ".png"
-                visible: startButton.checked
+                visible: core.lightsaberPower ? true : false
             }
             Image {
                 id: lightsaberImageOff
                 anchors.fill: parent
                 source: "lightsabber_off.png"
-                visible: !startButton.checked
+                visible: core.lightsaberPower ? false : true
             }
 
         }

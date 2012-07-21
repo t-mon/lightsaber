@@ -12,12 +12,13 @@ Core::Core(QObject *parent) :
     m_settings = new LightsaberSettings(this);
     m_vibration = new Vibration(this);
 
+    lightsaberPowerStatus = false;
 
     //Sound connectons
-    //connect(this,SIGNAL(lightsaberMoved(int)),m_soundeffects,SLOT(playSaberEffect(int)));
-    connect(m_accelerometer,SIGNAL(movementChanged(Accelerometer::Movement)),this,SLOT(lightsaberMovementRecognized(Accelerometer::Movement)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_vibration,SLOT(startstopVibration(bool)));
+
+    connect(m_accelerometer,SIGNAL(movementChanged(Accelerometer::Movement)),this,SLOT(lightsaberMovementRecognized(Accelerometer::Movement)));
 
     connect(m_soundeffects,SIGNAL(playHitsound()),m_vibration,SLOT(hitVibration()));
     connect(m_soundeffects,SIGNAL(playSwingsound()),m_vibration,SLOT(swingVibration()));
@@ -32,7 +33,7 @@ void Core::setlightsaberPowerStatus(bool status)
 
 }
 
-bool Core::getlightsaberPowerStatus()
+bool Core::lightsaberPower()
 {
     return lightsaberPowerStatus;
 }
@@ -48,7 +49,6 @@ void Core::lightsaberMovementRecognized(Accelerometer::Movement movement)
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
             qDebug() << "------------swing";
             break;
-
     }
 
 }

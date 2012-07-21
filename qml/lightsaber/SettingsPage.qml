@@ -58,7 +58,7 @@ Page {
                 minimumValue: 8
                 stepSize: 1
                 valueIndicatorVisible: true
-                onValueIndicatorPositionChanged:  lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
+                onValueChanged:  lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
 
             }
 
