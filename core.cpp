@@ -40,9 +40,9 @@ bool Core::getlightsaberPowerStatus()
 void Core::lightsaberMovementRecognized(Accelerometer::Movement movement)
 {
     switch(movement){
-        case MovementHit:
+        case Accelerometer::MovementHit:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectHit);
-        case MovementSwing:
+        case Accelerometer::MovementSwing:
             m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
     }
 
