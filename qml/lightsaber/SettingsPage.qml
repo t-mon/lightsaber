@@ -11,12 +11,12 @@ Page {
         screenSaverInhibited: lightsaberSettings.keepDisplayOn
     }
 
-
     Flickable {
         id: settingPageFlickable
         anchors.fill: parent
         contentHeight: settingsColumn.height
         flickableDirection: Flickable.VerticalFlick
+
         Column {
             id: settingsColumn
             anchors.left: parent.left
@@ -58,7 +58,7 @@ Page {
                 minimumValue: 8
                 stepSize: 1
                 valueIndicatorVisible: true
-                onValueChanged: lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
+                onValueIndicatorPositionChanged:  lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
 
             }
 
@@ -79,10 +79,8 @@ Page {
                 valueIndicatorVisible: true
             }
 
-
             SettingsSeparator{
             }
-
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -113,20 +111,12 @@ Page {
                 ColorButton{
                     color: "orange"
                 }
-
-
             }
 
             SettingsSeparator{
             }
-
-
         }
-
     }
-
-
-
 }
 
 

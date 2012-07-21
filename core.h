@@ -25,23 +25,13 @@ private:
     LightsaberSettings *m_settings;
     Vibration *m_vibration;
 
-    qreal accel_x;
-    qreal accel_y;
-    qreal accel_z;
-    int sensitivityHit;
-    int sensitivitySwing;
-
-    int swing;
-    int hit;
-
 
 signals:
     void lightsaberMoved(const int &swingOrHit);
     void lightsaberPowerChanged(const bool &lightsaberPower);
     
 private slots:
-    void detectLightsaberMove(const qreal &x, const qreal &y, const qreal &z);
-    void on_lightsaberSensitivityHitChanged(const int &sensitivity);
+    void lightsaberMovementRecognized(Accelerometer::Movement movement);
 
 };
 

@@ -3,7 +3,7 @@
 Vibration::Vibration(QObject *parent) :
     QObject(parent)
 {
-    m_settings = new QSettings("lightsaber");
+    m_settings = new QSettings("lightsaber",QString(),this);
 
 }
 

@@ -10,7 +10,14 @@ class Soundeffects : public QObject
     Q_OBJECT
 public:
     explicit Soundeffects(QObject *parent = 0);
-    
+
+    enum SoundEffect{
+        SoundEffectHit,
+        SoundEffectSwing,
+        SoundEffectOn,
+        SoundEffectOff
+    };
+
 private:
     QMediaPlayer m_player;
     QSettings *m_settings;
@@ -21,12 +28,14 @@ private:
     bool vibrationStatusOnOff;
 
 
+
+
 signals:
     void playHitsound();
     void playSwingsound();
     
 public slots:
-    void playSaberEffect(const int &swingOrHit);
+    void playSaberEffect(SoundEffect soundEffect);
     void playOnOffSound(const bool &lightsaberPower);
 };
 
