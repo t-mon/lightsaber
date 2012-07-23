@@ -1,6 +1,7 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
 import LightsaberSettings 1.0
+import Accelerometer 1.0
 
 PageStackWindow {
     id: appWindow
@@ -17,32 +18,16 @@ PageStackWindow {
         id: lightsaberSettings
     }
 
+    Accelerometer{
+        id: accelerometer
+    }
+
     MainPage {
         id: mainPage
     }
 
     SettingsPage {
         id: settingsPage
-    }
-
-    ToolBarLayout {
-        id: commonTools
-
-        ToolIcon {
-            visible: pageStack.depth > 1
-            platformIconId: "toolbar-back"
-            onClicked: {
-                pageStack.pop();
-            }
-        }
-
-        ToolIcon {
-            platformIconId: "toolbar-view-menu"
-            onClicked: {
-                myMenu.open();
-            }
-        }
-
     }
 
     QueryDialog {
@@ -61,14 +46,6 @@ PageStackWindow {
                     aboutDialog.open();
                 }
             }
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: {
-                    pageStack.push(settingsPage)
-                    core.lightsaberPower = false
-                }
-            }
-
         }
 
         onStatusChanged: {

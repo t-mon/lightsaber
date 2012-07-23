@@ -28,19 +28,16 @@ Page {
                 id: displaySuspendState
                 text: displaySuspendState.checked ? "Screensaver Off" : "Screensaver On"
                 checked: lightsaberSettings.keepDisplayOn
-                onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
             }
             CheckBox{
                 id: showStatusBarState
                 text: showStatusBarState.checked ? "Show statusbar On" : "Show statusbar Off"
                 checked: lightsaberSettings.showStatusBar
-                onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
             CheckBox{
                 id: vibrationState
                 text: vibrationState.checked ? "Vibration On" : "Vibration Off"
                 checked: lightsaberSettings.vibrationOnOff
-                onCheckedChanged: lightsaberSettings.vibrationOnOff = vibrationState.checked
             }
 
             SettingsSeparator{
@@ -58,8 +55,14 @@ Page {
                 minimumValue: 8
                 stepSize: 1
                 valueIndicatorVisible: true
-                onValueChanged:  lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
-
+                valueIndicatorText: if(value < 12){
+                                        "low"
+                                    }else if(value < 16 && value >= 12){
+                                        "medium"
+                                    }else if(value <=20 && value >= 16){
+                                        "high"
+                                    }
+                onValueChanged: accelerometer.accelerometerSensitivityHit = value
             }
 
             SettingsSeparator{
@@ -115,6 +118,34 @@ Page {
 
             SettingsSeparator{
             }
+
         }
+    }
+    ToolBar {
+        id: commonTools
+
+
+
+        ToolIcon {
+            platformIconId: "toolbar-back"
+            anchors.left: parent.left
+            onClicked: {
+                lightsaberSettings.keepDisplayOn = displaySuspendState.checked
+                lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
+                lightsaberSettings.showStatusBar = showStatusBarState.checked
+                lightsaberSettings.vibrationOnOff = vibrationState.checked
+                pageStack.pop(settingsPage);
+
+            }
+        }
+
+        ToolIcon {
+            platformIconId: "toolbar-view-menu"
+            anchors.right: parent.right
+            onClicked: {
+                myMenu.open();
+            }
+        }
+
     }
 }

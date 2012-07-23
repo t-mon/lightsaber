@@ -38,7 +38,6 @@ public:
 
 signals:
     void lightsaberHitSensChanged();
-    void lightsaberSensitivityHitChanged(int sensitivity);
     void keepDisplayOnChanged();
     void showStatusBarChanged();
     void lightsaberColorChanged();
@@ -46,7 +45,6 @@ signals:
 
 private:
     QSettings *m_settings;
-    //int sensitivitySwing() const;
 
 private slots:
 

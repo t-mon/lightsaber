@@ -14,6 +14,7 @@ Core::Core(QObject *parent) :
 
     lightsaberPowerStatus = false;
 
+
     //Sound connectons
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_vibration,SLOT(startstopVibration(bool)));
@@ -27,10 +28,11 @@ Core::Core(QObject *parent) :
 
 void Core::setlightsaberPowerStatus(bool status)
 {
-    lightsaberPowerStatus = status;
-    qDebug() << "Lightsaber Power Status changed to " << lightsaberPowerStatus;
-    emit lightsaberPowerChanged(lightsaberPowerStatus);
-
+    if(lightsaberPowerStatus != status){
+        lightsaberPowerStatus = status;
+        qDebug() << "Lightsaber Power Status changed to " << lightsaberPowerStatus;
+        emit lightsaberPowerChanged(lightsaberPowerStatus);
+    }
 }
 
 bool Core::lightsaberPower()
@@ -41,14 +43,12 @@ bool Core::lightsaberPower()
 void Core::lightsaberMovementRecognized(Accelerometer::Movement movement)
 {
     switch(movement){
-        case Accelerometer::MovementHit:
-            m_soundeffects->playSaberEffect(Soundeffects::SoundEffectHit);
-            qDebug() << "------------hit";
-            break;
-        case Accelerometer::MovementSwing:
-            m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
-            qDebug() << "------------swing";
-            break;
+    case Accelerometer::MovementHit:
+        m_soundeffects->playSaberEffect(Soundeffects::SoundEffectHit);
+        break;
+    case Accelerometer::MovementSwing:
+        m_soundeffects->playSaberEffect(Soundeffects::SoundEffectSwing);
+        break;
     }
 
 }

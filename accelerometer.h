@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QSensor>
 #include <QAccelerometer>
-#include <QTimer>
+#include <QSettings>
 
 
 QTM_USE_NAMESPACE
@@ -13,6 +13,8 @@ QTM_USE_NAMESPACE
 class Accelerometer : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(int accelerometerSensitivityHit READ accelerometerSensitivityHit WRITE setAccelerometerSensitivityHit NOTIFY accelerometerSensitivityHitChanged())
+
 public:
     explicit Accelerometer(QObject *parent = 0);
     enum Movement{
@@ -20,20 +22,26 @@ public:
         MovementSwing
     };
 
+
+
 private:
     QAccelerometer *m_sensor;
+    QSettings *m_settings;
+
     qreal accel_x;
     qreal accel_y;
     qreal accel_z;
+
     int sensitivityHit;
     int sensitivitySwing;
 
-
-
+    int accelerometerSensitivityHit() const;
+    void setAccelerometerSensitivityHit(int sensitivity);
 
 signals:
     void accelerometerDataReady(const qreal &x, const qreal &y, const qreal &z);
     void movementChanged(Accelerometer::Movement movement);
+    void accelerometerSensitivityHitChanged();
 
 private slots:
     void accelerometerChanged();

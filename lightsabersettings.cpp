@@ -17,9 +17,8 @@ int LightsaberSettings::lightsaberSensitivityHit() const
 void LightsaberSettings::setlightsaberSensitivityHit(int sensitivity)
 {
     m_settings->setValue("LightsaberSensitivityHit", sensitivity);
-    qDebug() << "hit-sensitivitiy changed to " << sensitivity;
+    qDebug() << "hit-sensitivitiy saved to " << sensitivity;
     emit lightsaberHitSensChanged();
-    emit lightsaberSensitivityHitChanged(sensitivity);
 }
 
 bool LightsaberSettings::isShowStatusBarOn()
@@ -29,7 +28,7 @@ bool LightsaberSettings::isShowStatusBarOn()
 
 void LightsaberSettings::setDisplayStateOn(bool displaySuspandState){
     m_settings->setValue("DisplayAutoSuspend", displaySuspandState);
-    qDebug() << "Display Settings Value changed to:" << displaySuspandState;
+    qDebug() << "Display Settings Value saved to:" << displaySuspandState;
     emit keepDisplayOnChanged();
 }
 
@@ -41,7 +40,7 @@ bool LightsaberSettings::isDisplayStateOn()
 void LightsaberSettings::setShowStatusBar(bool showStatusBar)
 {
     m_settings->setValue("ShowStatusBar", showStatusBar);
-    qDebug() << "Show statusbar settings value changed to:" << showStatusBar;
+    qDebug() << "Show statusbar settings value saved to:" << showStatusBar;
     emit showStatusBarChanged();
 
 }
@@ -54,7 +53,7 @@ QString LightsaberSettings::lightsaberColor() const
 void LightsaberSettings::setLightsaberColor(QString color)
 {
     m_settings->setValue("Lightsaber_color", color);
-    qDebug() << "Lightsabercolor changed to " << color;
+    qDebug() << "Lightsabercolor saved to " << color;
     emit lightsaberColorChanged();
 }
 
@@ -66,7 +65,7 @@ bool LightsaberSettings::vibrationOnOff()
 void LightsaberSettings::setVibrationOnOff(bool vibrationOnOff)
 {
     m_settings->setValue("Vibration", vibrationOnOff);
-    qDebug() << "Vibration changed to " << vibrationOnOff;
+    qDebug() << "Vibration saved to " << vibrationOnOff;
     emit vibrationOnOffChanged();
 }
 
