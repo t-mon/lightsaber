@@ -8,9 +8,7 @@
 Soundeffects::Soundeffects(QObject *parent) :
     QObject(parent)
 {    
-
     lightsaberPowerStatus = false;
-
 
 }
 

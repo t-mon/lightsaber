@@ -28,11 +28,13 @@ Page {
                 id: displaySuspendState
                 text: displaySuspendState.checked ? "Screensaver Off" : "Screensaver On"
                 checked: lightsaberSettings.keepDisplayOn
+                onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
             }
             CheckBox{
                 id: showStatusBarState
                 text: showStatusBarState.checked ? "Show statusbar On" : "Show statusbar Off"
                 checked: lightsaberSettings.showStatusBar
+                onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
             CheckBox{
                 id: vibrationState
