@@ -32,13 +32,13 @@ Page {
                 id: lightsaberImage
                 anchors.fill: parent
                 source: "lightsabber_" + lightsabercolor + ".png"
-                visible: core.lightsaberPower ? true : false
+                visible: core.lightsaberPower ? false : true
             }
             Image {
                 id: lightsaberImageOff
                 anchors.fill: parent
                 source: "lightsabber_off.png"
-                visible: core.lightsaberPower ? false : true
+                visible: core.lightsaberPower ? true : false
             }
 
         }
@@ -51,7 +51,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             text: startButton.checked ? "Power OFF" : "Power ON"
             checkable: true
-
+            checked: core.lightsaberPower
             onClicked: {
                 core.lightsaberPower = startButton.checked
 
