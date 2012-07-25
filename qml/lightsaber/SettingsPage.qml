@@ -125,9 +125,7 @@ Page {
     }
     ToolBar {
         id: commonTools
-
-
-
+        anchors.baseline: appWindow.baseline
         ToolIcon {
             platformIconId: "toolbar-back"
             anchors.left: parent.left

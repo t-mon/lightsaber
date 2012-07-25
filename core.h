@@ -6,6 +6,7 @@
 #include "soundeffects.h"
 #include "lightsabersettings.h"
 #include "vibration.h"
+#include "meegostuff.h"
 
 class Core : public QObject
 {
@@ -14,7 +15,6 @@ class Core : public QObject
 
 public:
     explicit Core(QObject *parent = 0);
-    void setlightsaberPowerStatus(bool status);
     bool lightsaberPower();
 
     bool lightsaberPowerStatus;
@@ -24,7 +24,7 @@ private:
     Soundeffects *m_soundeffects;
     LightsaberSettings *m_settings;
     Vibration *m_vibration;
-
+    MeeGoStuff *m_system;
 
 signals:
     void lightsaberMoved(const int &swingOrHit);
@@ -32,6 +32,7 @@ signals:
     
 private slots:
     void lightsaberMovementRecognized(Accelerometer::Movement movement);
+    void setlightsaberPowerStatus(bool status);
 
 };
 

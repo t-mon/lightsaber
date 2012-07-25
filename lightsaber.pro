@@ -6,13 +6,17 @@ DEPLOYMENTFOLDERS = folder_01
 # Additional import path used to resolve QML modules in Creator's code model
 QML_IMPORT_PATH =
 
-CONFIG += mobility qdeclarative-boostable
-MOBILITY += multimedia sensors feedback
+QT += dbus
+CONFIG += mobility qdeclarative-boostable qmsystem2 meego
+MOBILITY += multimedia sensors feedback systeminfo
+
+INCLUDEPATH += /usr/include/resource/qt4
+LIBS += -lresourceqt
 
 symbian:TARGET.UID3 = 0xE4566FF6
 
-#my soundefects
 
+#my soundefects
 INSTALLS += soundeffects
 soundeffects.files = soundeffects
 soundeffects.path = /opt/lightsaber
@@ -45,7 +49,8 @@ SOURCES += main.cpp \
     accelerometer.cpp \
     soundeffects.cpp \
     lightsabersettings.cpp \
-    vibration.cpp
+    vibration.cpp \
+    meegostuff.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -65,4 +70,5 @@ HEADERS += \
     accelerometer.h \
     soundeffects.h \
     lightsabersettings.h \
-    vibration.h
+    vibration.h \
+    meegostuff.h

@@ -25,8 +25,6 @@ private:
     bool vibrationStatusOnOff;
 
 
-
-
 signals:
     void playHitsound();
     void playSwingsound();

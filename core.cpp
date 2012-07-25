@@ -11,6 +11,7 @@ Core::Core(QObject *parent) :
     m_soundeffects = new Soundeffects(this);
     m_settings = new LightsaberSettings(this);
     m_vibration = new Vibration(this);
+    m_system = new MeeGoStuff(this);
 
     lightsaberPowerStatus = false;
 
@@ -23,6 +24,8 @@ Core::Core(QObject *parent) :
 
     connect(m_soundeffects,SIGNAL(playHitsound()),m_vibration,SLOT(hitVibration()));
     connect(m_soundeffects,SIGNAL(playSwingsound()),m_vibration,SLOT(swingVibration()));
+
+    connect(m_system,SIGNAL(powerStatusChangedByKey(bool)),this,SLOT(setlightsaberPowerStatus(bool)));
 
 }
 

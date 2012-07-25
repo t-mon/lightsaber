@@ -32,38 +32,26 @@ Page {
                 id: lightsaberImage
                 anchors.fill: parent
                 source: "lightsabber_" + lightsabercolor + ".png"
-                visible: startButton.checked
+                visible: core.lightsaberPower ? true : false
             }
             Image {
                 id: lightsaberImageOff
                 anchors.fill: parent
                 source: "lightsabber_off.png"
-                visible: !startButton.checked
+                visible: core.lightsaberPower ? false : true
             }
 
-        }
-
-        Button {
-            id: startButton
-            width: 150
-            height: 80
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: startButton.checked ? "Power OFF" : "Power ON"
-            checkable: true
-            onClicked: {
-                core.lightsaberPower = checked
-            }
         }
     }
 
     ToolBar {
         id: commonTools
+        anchors.baseline: appWindow.baseline
 
         ToolIcon {
             platformIconId: "toolbar-settings"
             anchors.left: parent.left
             onClicked: {
-                startButton.checked = false;
                 core.lightsaberPower = false;
                 pageStack.push(settingsPage);
             }
