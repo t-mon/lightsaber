@@ -17,7 +17,7 @@ MeeGoStuff::MeeGoStuff(QObject *parent) :
 
 void MeeGoStuff::keyEventHappend(MeeGo::QmKeys::Key key, MeeGo::QmKeys::State state)
 {
-    // only handle presses, no releases for now...
+    // handels only presses, not release key
      if(!m_buttonsAcquired || state != MeeGo::QmKeys::KeyDown) {
          return;
      }

@@ -28,13 +28,13 @@ Page {
                 id: displaySuspendState
                 text: displaySuspendState.checked ? "Screensaver Off" : "Screensaver On"
                 checked: lightsaberSettings.keepDisplayOn
-                onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
+                //onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
             }
             CheckBox{
                 id: showStatusBarState
                 text: showStatusBarState.checked ? "Show statusbar On" : "Show statusbar Off"
                 checked: lightsaberSettings.showStatusBar
-                onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
+                //onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
             CheckBox{
                 id: vibrationState
@@ -135,6 +135,7 @@ Page {
                 lightsaberSettings.showStatusBar = showStatusBarState.checked
                 lightsaberSettings.vibrationOnOff = vibrationState.checked
                 pageStack.pop(settingsPage);
+                myMenu.close();
 
             }
         }
@@ -143,7 +144,11 @@ Page {
             platformIconId: "toolbar-view-menu"
             anchors.right: parent.right
             onClicked: {
-                myMenu.open();
+                if(myMenu.status == DialogStatus.Open){
+                    myMenu.close();
+                }else{
+                    myMenu.open()
+                }
             }
         }
 

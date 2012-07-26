@@ -54,6 +54,7 @@ Page {
             onClicked: {
                 core.lightsaberPower = false;
                 pageStack.push(settingsPage);
+                myMenu.close();
             }
         }
 
@@ -61,7 +62,11 @@ Page {
             platformIconId: "toolbar-view-menu"
             anchors.right: parent.right
             onClicked: {
-                myMenu.open();
+                if(myMenu.status == DialogStatus.Open){
+                    myMenu.close();
+                }else{
+                    myMenu.open()
+                }
             }
         }
 
