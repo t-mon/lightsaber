@@ -13,10 +13,9 @@ Item {
         height: parent.height
         width: parent.width
         Rectangle{
-            anchors.horizontalCenter: parent.horizontalCenter
             anchors.left: parent.left
             height: 5
-            width: parent.width *2/3
+            width: parent.width *6/7
             color: "gray"
             smooth: true
         }

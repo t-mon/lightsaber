@@ -22,6 +22,8 @@ public:
         MovementSwing
     };
 
+    int accelerometerSensitivityHit() const;
+    void setAccelerometerSensitivityHit(int sensitivity);
 
 
 private:
@@ -35,8 +37,6 @@ private:
     int sensitivityHit;
     int sensitivitySwing;
 
-    int accelerometerSensitivityHit() const;
-    void setAccelerometerSensitivityHit(int sensitivity);
 
 signals:
     void accelerometerDataReady(const qreal &x, const qreal &y, const qreal &z);

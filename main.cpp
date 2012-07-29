@@ -14,7 +14,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QmlApplicationViewer viewer;
     viewer.rootContext()->setContextProperty("core", &core);
     qmlRegisterType<LightsaberSettings>("LightsaberSettings",1,0,"Settings");
-    qmlRegisterType<Accelerometer>("Accelerometer",1,0,"Accelerometer");
 
 
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);

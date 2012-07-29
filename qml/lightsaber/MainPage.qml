@@ -16,37 +16,51 @@ Page {
     property string lightsabercolor : lightsaberSettings.lightsaberColor
 
     Column {
-        spacing: 2
         anchors.fill: parent
 
-        Rectangle {
-            id: lightsaberRectangle
-            width: 200
-            height: 650
-            //radius: 6
+        Rectangle{
+            id: swordRectangle
+            height: 600
+            width: 190
             anchors.horizontalCenter: parent.horizontalCenter
+            color: "transparent"
 
+            BorderImage {
+                id: lightsaberImage
+                anchors.bottom: parent.bottom
+                width: parent.width
+                height: core.lightsaberPower ? parent.height : 0
+
+                source: "lightsaber_" + lightsabercolor + ".png"
+
+                Behavior on height{
+                    NumberAnimation{
+                        easing.amplitude: 0.65
+                        easing.period: 0.37
+                        easing.type: Easing.OutExpo
+                        duration: 600
+                    }
+                }
+            }
+        }
+
+
+        Rectangle{
+            id: hiltRectangle
+            height: 140
+            width: 50
+            anchors.horizontalCenter: parent.horizontalCenter
             color: "transparent"
 
             Image {
-                id: lightsaberImage
-                anchors.fill: parent
-                source: "lightsabber_" + lightsabercolor + ".png"
-                visible: core.lightsaberPower ? true : false
-            }
-            Image {
                 id: lightsaberImageOff
                 anchors.fill: parent
-                source: "lightsabber_off.png"
-                visible: core.lightsaberPower ? false : true
+                source: core.lightsaberPower ? "lightsaber_on.png" : "lightsaber_off.png"
             }
-
         }
     }
-
     ToolBar {
         id: commonTools
-        anchors.baseline: appWindow.baseline
 
         ToolIcon {
             platformIconId: "toolbar-settings"

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="900"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="lightsaber_orange.svg"
+   inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber.png"
+   inkscape:export-xdpi="103.23188"
+   inkscape:export-ydpi="103.23188">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       id="filter3809"
+       x="-0.21594223"
+       width="1.4318845"
+       y="-0.012706082"
+       height="1.0254122"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.5287639"
+         id="feGaussianBlur3811" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3818"
+       x="-0.12710542"
+       width="1.2542108"
+       y="-0.0224373"
+       height="1.0448746">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.97695766"
+         id="feGaussianBlur3820" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3100052"
+     inkscape:cx="147.67684"
+     inkscape:cy="575.98299"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="752"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-152.36218)">
+    <rect
+       style="opacity:0.52515719999999999;fill:#e0c100;fill-opacity:1;stroke:none;stroke-width:0.10000000000000001;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3818)"
+       id="rect2985"
+       width="18.44688"
+       height="104.50002"
+       x="18.104166"
+       y="4.125"
+       transform="matrix(4.7277431,0,0,-8.0685599,20.802098,1055.6449)"
+       rx="8.2928591"
+       ry="15.354173"
+       inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsabber_off.png"
+       inkscape:export-xdpi="120.90221"
+       inkscape:export-ydpi="120.90221" />
+    <rect
+       style="opacity:0.52515719999999999;fill:#ff8a00;fill-opacity:1;stroke:none;stroke-width:0.09855783000000000;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3809)"
+       id="rect3803"
+       width="5.8767262"
+       height="99.876053"
+       x="22.228304"
+       y="950.6535"
+       rx="4.20117"
+       ry="5.8750677"
+       transform="matrix(7.0408175,0,0,8.2901124,-27.19391,-7691.5218)" />
+  </g>
+</svg>

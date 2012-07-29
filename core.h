@@ -2,6 +2,8 @@
 #define CORE_H
 
 #include <QObject>
+#include <QDeclarativeView>
+
 #include "accelerometer.h"
 #include "soundeffects.h"
 #include "lightsabersettings.h"
@@ -19,12 +21,15 @@ public:
 
     bool lightsaberPowerStatus;
 
+
+
 private:
-    Accelerometer *m_accelerometer;
     Soundeffects *m_soundeffects;
     LightsaberSettings *m_settings;
     Vibration *m_vibration;
     MeeGoStuff *m_system;
+    Accelerometer *m_accelerometer;
+    QDeclarativeView  m_qmlDeclarativeView;
 
 signals:
     void lightsaberMoved(const int &swingOrHit);

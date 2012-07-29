@@ -1,7 +1,8 @@
 #include "core.h"
 #include <stdlib.h>
 #include <QDebug>
-
+#include <QtDeclarative>
+#include <QDeclarativeContext>
 
 Core::Core(QObject *parent) :
     QObject(parent)
@@ -12,6 +13,9 @@ Core::Core(QObject *parent) :
     m_settings = new LightsaberSettings(this);
     m_vibration = new Vibration(this);
     m_system = new MeeGoStuff(this);
+
+    m_qmlDeclarativeView.rootContext()->setContextProperty("accelerometerData",m_accelerometer);
+    m_qmlDeclarativeView.show();
 
     lightsaberPowerStatus = false;
 

@@ -1,7 +1,6 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
 import LightsaberSettings 1.0
-import Accelerometer 1.0
 
 PageStackWindow {
     id: appWindow
@@ -16,10 +15,6 @@ PageStackWindow {
 
     Settings {
         id: lightsaberSettings
-    }
-
-    Accelerometer{
-        id: accelerometer
     }
 
     MainPage {

@@ -21,7 +21,6 @@ Page {
             id: settingsColumn
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.margins: appWindow.pageMargin
             spacing: 10
 
             CheckBox{
@@ -57,6 +56,7 @@ Page {
                 minimumValue: 8
                 stepSize: 1
                 valueIndicatorVisible: true
+
                 valueIndicatorText: if(value < 12){
                                         "low"
                                     }else if(value < 16 && value >= 12){
@@ -64,7 +64,7 @@ Page {
                                     }else if(value <=20 && value >= 16){
                                         "high"
                                     }
-                onValueChanged: accelerometer.accelerometerSensitivityHit = value
+                onValueChanged: accelerometerData.accelerometerSensitivityHit = value
             }
 
             SettingsSeparator{
@@ -125,7 +125,6 @@ Page {
     }
     ToolBar {
         id: commonTools
-        anchors.baseline: appWindow.baseline
         ToolIcon {
             platformIconId: "toolbar-back"
             anchors.left: parent.left
@@ -151,6 +150,5 @@ Page {
                 }
             }
         }
-
     }
 }
