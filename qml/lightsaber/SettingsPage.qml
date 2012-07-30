@@ -8,7 +8,7 @@ Page {
     tools: commonTools
 
     ScreenSaver {
-        screenSaverInhibited: lightsaberSettings.keepDisplayOn
+        screenSaverInhibited: LightsaberSettings.keepDisplayOn
     }
 
     Flickable {
@@ -26,19 +26,19 @@ Page {
             CheckBox{
                 id: displaySuspendState
                 text: displaySuspendState.checked ? "Screensaver Off" : "Screensaver On"
-                checked: lightsaberSettings.keepDisplayOn
+                checked: LightsaberSettings.keepDisplayOn
                 //onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
             }
             CheckBox{
                 id: showStatusBarState
                 text: showStatusBarState.checked ? "Show statusbar On" : "Show statusbar Off"
-                checked: lightsaberSettings.showStatusBar
+                checked: LightsaberSettings.showStatusBar
                 //onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
             CheckBox{
                 id: vibrationState
                 text: vibrationState.checked ? "Vibration On" : "Vibration Off"
-                checked: lightsaberSettings.vibrationOnOff
+                checked: LightsaberSettings.vibrationOnOff
             }
 
             SettingsSeparator{
@@ -51,7 +51,7 @@ Page {
 
             Slider {
                 id: lightsaberSensitivityHit
-                value: lightsaberSettings.lightsaberSensitivityHit
+                value: LightsaberSettings.lightsaberSensitivityHit
                 maximumValue: 20
                 minimumValue: 8
                 stepSize: 1
@@ -129,10 +129,10 @@ Page {
             platformIconId: "toolbar-back"
             anchors.left: parent.left
             onClicked: {
-                lightsaberSettings.keepDisplayOn = displaySuspendState.checked
-                lightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
-                lightsaberSettings.showStatusBar = showStatusBarState.checked
-                lightsaberSettings.vibrationOnOff = vibrationState.checked
+                LightsaberSettings.keepDisplayOn = displaySuspendState.checked
+                LightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
+                LightsaberSettings.showStatusBar = showStatusBarState.checked
+                LightsaberSettings.vibrationOnOff = vibrationState.checked
                 pageStack.pop(settingsPage);
                 myMenu.close();
 

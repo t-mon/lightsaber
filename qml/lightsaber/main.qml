@@ -1,20 +1,15 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
-import LightsaberSettings 1.0
 
 PageStackWindow {
     id: appWindow
 
     initialPage: mainPage
 
-    showStatusBar: lightsaberSettings.showStatusBar
+    showStatusBar: LightsaberSettings.showStatusBar
 
     Component.onCompleted: {
             theme.inverted = true;
-    }
-
-    Settings {
-        id: lightsaberSettings
     }
 
     MainPage {

@@ -8,12 +8,12 @@ Page {
     tools: commonTools
 
     ScreenSaver {
-        screenSaverInhibited: lightsaberSettings.keepDisplayOn
+        screenSaverInhibited: LightsaberSettings.keepDisplayOn
     }
 
     orientationLock: PageOrientation.LockPortrait
 
-    property string lightsabercolor : lightsaberSettings.lightsaberColor
+    property string lightsabercolor : LightsaberSettings.lightsaberColor
 
     Column {
         anchors.fill: parent

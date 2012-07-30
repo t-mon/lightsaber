@@ -2,7 +2,7 @@
 #define CORE_H
 
 #include <QObject>
-#include <QDeclarativeView>
+#include <qmlapplicationviewer.h>
 
 #include "accelerometer.h"
 #include "soundeffects.h"
@@ -29,7 +29,7 @@ private:
     Vibration *m_vibration;
     MeeGoStuff *m_system;
     Accelerometer *m_accelerometer;
-    QDeclarativeView  m_qmlDeclarativeView;
+    QmlApplicationViewer *m_viewer;
 
 signals:
     void lightsaberMoved(const int &swingOrHit);

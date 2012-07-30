@@ -1,6 +1,7 @@
 #include "core.h"
 #include <stdlib.h>
 #include <QDebug>
+#include <QApplication>
 #include <QtDeclarative>
 #include <QDeclarativeContext>
 
@@ -8,16 +9,23 @@ Core::Core(QObject *parent) :
     QObject(parent)
 {
 
+    lightsaberPowerStatus = false;
+
     m_accelerometer = new Accelerometer(this);
     m_soundeffects = new Soundeffects(this);
     m_settings = new LightsaberSettings(this);
     m_vibration = new Vibration(this);
     m_system = new MeeGoStuff(this);
 
-    m_qmlDeclarativeView.rootContext()->setContextProperty("accelerometerData",m_accelerometer);
-    m_qmlDeclarativeView.show();
+    m_viewer = new QmlApplicationViewer();
+    m_viewer->rootContext()->setContextProperty("core", this);
+    m_viewer->rootContext()->setContextProperty("accelerometerData", m_accelerometer);
+    m_viewer->rootContext()->setContextProperty("LightsaberSettings", m_settings);
 
-    lightsaberPowerStatus = false;
+    m_viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
+    m_viewer->setMainQmlFile(QLatin1String("qml/lightsaber/main.qml"));
+    m_viewer->showExpanded();
+
 
 
     //Sound connectons

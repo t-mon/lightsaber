@@ -9,14 +9,14 @@ Item {
     Rectangle {
         anchors.fill: parent
         radius: 30
-        border.color: lightsaberSettings.lightsaberColor == colorButton.color ? "white" : "gray"
-        border.width: lightsaberSettings.lightsaberColor == colorButton.color ? 7 : 5
+        border.color: LightsaberSettings.lightsaberColor == colorButton.color ? "white" : "gray"
+        border.width: LightsaberSettings.lightsaberColor == colorButton.color ? 7 : 5
         color: colorButton.color
 
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                lightsaberSettings.lightsaberColor = colorButton.color
+                LightsaberSettings.lightsaberColor = colorButton.color
             }
         }
     }
