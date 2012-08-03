@@ -55,8 +55,7 @@ Page {
         Image {
             id: lightsaberImageOff
             anchors.fill: parent
-            source: "lightsaber_hilt_DarthVader_on.png"
-            //source: core.lightsaberPower ? "lightsaber_on.png" : "lightsaber_off.png"
+            source: core.lightsaberPower ? "lightsaber_hilt_DarthVader_on.png" : "lightsaber_hilt_DarthVader_off.png"
         }
     }
     ToolBar {
