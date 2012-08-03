@@ -11,7 +11,7 @@ LightsaberSettings::LightsaberSettings(QObject *parent) :
 
 int LightsaberSettings::lightsaberSensitivityHit() const
 {
-    return m_settings->value("LightsaberSensitivityHit").toInt();
+    return m_settings->value("LightsaberSensitivityHit",15).toInt();
 }
 
 void LightsaberSettings::setlightsaberSensitivityHit(int sensitivity)
@@ -20,6 +20,19 @@ void LightsaberSettings::setlightsaberSensitivityHit(int sensitivity)
     qDebug() << "hit-sensitivitiy saved to " << sensitivity;
     emit lightsaberHitSensChanged();
 }
+
+int LightsaberSettings::lightsaberSensitivitySwing() const
+{
+    return m_settings->value("LightsaberSensitivitySwing",4).toInt();
+}
+
+void LightsaberSettings::setlightsaberSensitivitySwing(int sensitivity)
+{
+    m_settings->setValue("LightsaberSensitivitySwing", sensitivity);
+    qDebug() << "swing-sensitivitiy saved to " << sensitivity;
+    emit lightsaberSwingSensChanged();
+}
+
 
 bool LightsaberSettings::isShowStatusBarOn()
 {

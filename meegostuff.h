@@ -14,7 +14,6 @@ public:
 
 private:
     MeeGo::QmKeys *m_keys;
-    bool m_buttonsAcquired;
     ResourcePolicy::ResourceSet *m_resouceSet;
 
 

@@ -9,7 +9,6 @@ Vibration::Vibration(QObject *parent) :
 
 void Vibration::powerOnVibration()
 {
-
     if(m_settings->value("Vibration").toBool()){
         m_rumble.setAttackIntensity(1);
         m_rumble.setAttackTime(1000);

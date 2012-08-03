@@ -27,13 +27,10 @@ Core::Core(QObject *parent) :
     m_viewer->showExpanded();
 
 
-
-    //Sound connectons
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_soundeffects,SLOT(playOnOffSound(bool)));
     connect(this,SIGNAL(lightsaberPowerChanged(bool)),m_vibration,SLOT(startstopVibration(bool)));
 
     connect(m_accelerometer,SIGNAL(movementChanged(Accelerometer::Movement)),this,SLOT(lightsaberMovementRecognized(Accelerometer::Movement)));
-
     connect(m_soundeffects,SIGNAL(playHitsound()),m_vibration,SLOT(hitVibration()));
     connect(m_soundeffects,SIGNAL(playSwingsound()),m_vibration,SLOT(swingVibration()));
 

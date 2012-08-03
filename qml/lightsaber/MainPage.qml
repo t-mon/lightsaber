@@ -20,8 +20,8 @@ Page {
 
         Rectangle{
             id: swordRectangle
-            height: 600
-            width: 190
+            height: 550
+            width: 170
             anchors.horizontalCenter: parent.horizontalCenter
             color: "transparent"
 
@@ -47,15 +47,16 @@ Page {
 
         Rectangle{
             id: hiltRectangle
-            height: 140
-            width: 50
+            height: 170
+            width: 55
             anchors.horizontalCenter: parent.horizontalCenter
             color: "transparent"
 
             Image {
                 id: lightsaberImageOff
                 anchors.fill: parent
-                source: core.lightsaberPower ? "lightsaber_on.png" : "lightsaber_off.png"
+                source: "lightsaber_hilt_DarthVader_on.png"
+                //source: core.lightsaberPower ? "lightsaber_on.png" : "lightsaber_off.png"
             }
         }
     }

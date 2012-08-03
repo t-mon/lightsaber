@@ -53,15 +53,15 @@ Page {
                 id: lightsaberSensitivityHit
                 value: LightsaberSettings.lightsaberSensitivityHit
                 maximumValue: 20
-                minimumValue: 8
+                minimumValue: 7
                 stepSize: 1
                 valueIndicatorVisible: true
 
-                valueIndicatorText: if(value < 12){
+                valueIndicatorText: if(value <= 11){
                                         "low"
-                                    }else if(value < 16 && value >= 12){
+                                    }else if(value <= 16 && value > 11){
                                         "medium"
-                                    }else if(value <=20 && value >= 16){
+                                    }else if(value <=20 && value > 16){
                                         "high"
                                     }
                 onValueChanged: accelerometerData.accelerometerSensitivityHit = value
@@ -77,11 +77,21 @@ Page {
 
             Slider {
                 id: lightsaberSensitivitySwing
-                maximumValue: 5
+                maximumValue: 6
                 minimumValue: 1
-                value: 3
+                value: LightsaberSettings.lightsaberSensitivitySwing
                 stepSize: 1
                 valueIndicatorVisible: true
+
+                valueIndicatorText: if(value <= 2){
+                                        "low"
+                                    }else if(value <=4 && value > 2){
+                                        "medium"
+                                    }else if(value <=6 && value > 4){
+                                        "high"
+                                    }
+                onValueChanged: accelerometerData.accelerometerSensitivitySwing = value
+
             }
 
             SettingsSeparator{
@@ -130,9 +140,10 @@ Page {
             anchors.left: parent.left
             onClicked: {
                 LightsaberSettings.keepDisplayOn = displaySuspendState.checked
-                LightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
                 LightsaberSettings.showStatusBar = showStatusBarState.checked
                 LightsaberSettings.vibrationOnOff = vibrationState.checked
+                LightsaberSettings.lightsaberSensitivityHit = lightsaberSensitivityHit.value
+                LightsaberSettings.lightsaberSensitivitySwing = lightsaberSensitivitySwing.value
                 pageStack.pop(settingsPage);
                 myMenu.close();
 

@@ -8,6 +8,7 @@ class LightsaberSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int lightsaberSensitivityHit READ lightsaberSensitivityHit WRITE setlightsaberSensitivityHit NOTIFY lightsaberHitSensChanged())
+    Q_PROPERTY(int lightsaberSensitivitySwing READ lightsaberSensitivitySwing WRITE setlightsaberSensitivitySwing NOTIFY lightsaberSwingSensChanged())
     Q_PROPERTY(bool keepDisplayOn READ isDisplayStateOn WRITE setDisplayStateOn NOTIFY keepDisplayOnChanged())
     Q_PROPERTY(bool showStatusBar READ isShowStatusBarOn WRITE setShowStatusBar NOTIFY showStatusBarChanged())
     Q_PROPERTY(QString lightsaberColor READ lightsaberColor WRITE setLightsaberColor NOTIFY lightsaberColorChanged())
@@ -19,6 +20,9 @@ public:
     
     int lightsaberSensitivityHit() const;
     void setlightsaberSensitivityHit(int sensitivity);
+
+    int lightsaberSensitivitySwing() const;
+    void setlightsaberSensitivitySwing(int sensitivity);
 
     bool isDisplayStateOn();
     bool keepDisplayOn() const;
@@ -38,6 +42,7 @@ public:
 
 signals:
     void lightsaberHitSensChanged();
+    void lightsaberSwingSensChanged();
     void keepDisplayOnChanged();
     void showStatusBarChanged();
     void lightsaberColorChanged();

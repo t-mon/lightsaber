@@ -10,7 +10,6 @@ MeeGoStuff::MeeGoStuff(QObject *parent) :
     m_resouceSet->addResource(ResourcePolicy::ScaleButtonType);
     m_resouceSet->acquire();
 
-    m_buttonsAcquired = true;
 
     connect(m_keys,SIGNAL(keyEvent(MeeGo::QmKeys::Key,MeeGo::QmKeys::State)),this,SLOT(keyEventHappend(MeeGo::QmKeys::Key,MeeGo::QmKeys::State)));
 }
@@ -18,11 +17,11 @@ MeeGoStuff::MeeGoStuff(QObject *parent) :
 void MeeGoStuff::keyEventHappend(MeeGo::QmKeys::Key key, MeeGo::QmKeys::State state)
 {
     // handels only presses, not release key
-     if(!m_buttonsAcquired || state != MeeGo::QmKeys::KeyDown) {
+     if(state != MeeGo::QmKeys::KeyDown) {
          return;
      }
 
-     qDebug() << "keyEvent:" << key << state;
+     qDebug() << "key event:" << key << state;
      switch(key) {
      case MeeGo::QmKeys::VolumeUp:
         emit powerStatusChangedByKey(true);

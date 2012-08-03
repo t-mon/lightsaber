@@ -17,7 +17,7 @@ Accelerometer::Accelerometer(QObject *parent) :
     }
 
     sensitivityHit = m_settings->value("LightsaberSensitivityHit").toInt();
-    sensitivitySwing = 3;
+    sensitivitySwing = m_settings->value("LightsaberSensitivitySwing").toInt();
 
     connect(m_sensor,SIGNAL(readingChanged()),this,SLOT(accelerometerChanged()));
     connect(this,SIGNAL(accelerometerDataReady(qreal,qreal,qreal)),this,SLOT(detectLightsaberMove(qreal,qreal,qreal)));
@@ -33,6 +33,18 @@ void Accelerometer::setAccelerometerSensitivityHit(int sensitivity)
 int Accelerometer::accelerometerSensitivityHit() const
 {
     return sensitivityHit;
+}
+
+void Accelerometer::setAccelerometerSensitivitySwing(int sensitivity)
+{
+    sensitivitySwing = sensitivity;
+    qDebug() << "Swing-sensitivitiy changed to " << sensitivity;
+    emit accelerometerSensitivitySwingChanged();
+}
+
+int Accelerometer::accelerometerSensitivitySwing() const
+{
+    return sensitivitySwing;
 }
 
 void Accelerometer::accelerometerChanged(){
