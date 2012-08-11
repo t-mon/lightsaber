@@ -224,9 +224,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.4817582"
-     inkscape:cx="180.33708"
-     inkscape:cy="663.65042"
+     inkscape:zoom="2.6322008"
+     inkscape:cx="176.1236"
+     inkscape:cy="-42.936457"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -253,6 +253,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-152.36218)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 0,152.36218 58.989,0 186.011,100 55,0 0,800.00002 -298.3146068,0 z"
+       id="rect3034"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
     <rect
        style="fill:url(#linearGradient3795);fill-opacity:1;stroke:none"
        id="rect2995"

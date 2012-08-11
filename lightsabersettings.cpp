@@ -70,6 +70,18 @@ void LightsaberSettings::setLightsaberColor(QString color)
     emit lightsaberColorChanged();
 }
 
+QString LightsaberSettings::hiltCharacter() const
+{
+    return m_settings->value("HiltCharacter","DarthVader").toString();
+}
+
+void LightsaberSettings::setHiltCharacter(QString character)
+{
+    m_settings->setValue("HiltCharacter",character);
+    qDebug() << "Hilt Character saved to " << character;
+    emit hiltCharacterChanged();
+}
+
 bool LightsaberSettings::vibrationOnOff()
 {
     return m_settings->value("Vibration", true).toBool();

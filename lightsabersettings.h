@@ -12,6 +12,7 @@ class LightsaberSettings : public QObject
     Q_PROPERTY(bool keepDisplayOn READ isDisplayStateOn WRITE setDisplayStateOn NOTIFY keepDisplayOnChanged())
     Q_PROPERTY(bool showStatusBar READ isShowStatusBarOn WRITE setShowStatusBar NOTIFY showStatusBarChanged())
     Q_PROPERTY(QString lightsaberColor READ lightsaberColor WRITE setLightsaberColor NOTIFY lightsaberColorChanged())
+    Q_PROPERTY(QString hiltCharacter READ hiltCharacter WRITE setHiltCharacter NOTIFY hiltCharacterChanged())
     Q_PROPERTY(bool vibrationOnOff READ vibrationOnOff WRITE setVibrationOnOff NOTIFY vibrationOnOffChanged())
 
 
@@ -35,6 +36,9 @@ public:
     QString lightsaberColor() const;
     void setLightsaberColor(QString color);
 
+    QString hiltCharacter() const;
+    void setHiltCharacter(QString character);
+
     bool vibrationOnOff();
     void setVibrationOnOff(bool vibrationOnOff);
 
@@ -46,6 +50,7 @@ signals:
     void keepDisplayOnChanged();
     void showStatusBarChanged();
     void lightsaberColorChanged();
+    void hiltCharacterChanged();
     void vibrationOnOffChanged();
 
 private:

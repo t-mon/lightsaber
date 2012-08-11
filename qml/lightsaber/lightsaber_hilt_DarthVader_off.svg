@@ -37,6 +37,30 @@
          id="stop3922" />
     </linearGradient>
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3910">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3912" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3914" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3902">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3904" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3906" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient3839">
       <stop
          style="stop-color:#323232;stop-opacity:1;"
@@ -155,6 +179,24 @@
        gradientTransform="matrix(0.93684213,0,0,0.80451976,11.973686,264.39608)" />
     <linearGradient
        inkscape:collect="always"
+       xlink:href="#linearGradient3902"
+       id="linearGradient3908"
+       x1="69.800003"
+       y1="872.99658"
+       x2="54.274185"
+       y2="872.99658"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3910"
+       id="linearGradient3916"
+       x1="233.88145"
+       y1="872.99658"
+       x2="261.49411"
+       y2="873.63098"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient3918"
        id="linearGradient3924"
        x1="127.5"
@@ -182,9 +224,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.59333333"
-     inkscape:cx="150"
-     inkscape:cy="450"
+     inkscape:zoom="2.6322008"
+     inkscape:cx="176.1236"
+     inkscape:cy="610.50914"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -211,6 +253,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-152.36218)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 0,152.36218 58.989,0 186.011,100 55,0 0,800.00002 -298.3146068,0 z"
+       id="rect3034"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
     <rect
        style="fill:url(#linearGradient3795);fill-opacity:1;stroke:none"
        id="rect2995"

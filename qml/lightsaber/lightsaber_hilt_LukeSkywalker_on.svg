@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="lightsaber_hilt_LukeSkywalker_off.svg"
+   sodipodi:docname="lightsaber_hilt_LukeSkywalker_on.svg"
    inkscape:export-filename="/Users/Timon/development/lightsaber/lightsaber/qml/lightsaber/lightsaber_hilt_LukeSkywalker_off.png"
    inkscape:export-xdpi="103.23188"
    inkscape:export-ydpi="103.23188">
@@ -336,7 +336,7 @@
        y="971.46216"
        ry="7.0395422" />
     <rect
-       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4199)"
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4199)"
        id="rect3928"
        width="41.235325"
        height="112.28696"

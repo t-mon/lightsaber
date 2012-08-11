@@ -18,7 +18,7 @@ Page {
     Rectangle{
         id: swordRectangle
         height: 630
-        width: 124
+        width: 140
         anchors.horizontalCenter: parent.horizontalCenter
         color: "transparent"
 
@@ -53,9 +53,11 @@ Page {
         color: "transparent"
 
         Image {
+            height: 170
+            width: 50
             id: lightsaberImageOff
-            anchors.fill: parent
-            source: core.lightsaberPower ? "lightsaber_hilt_DarthVader_on.png" : "lightsaber_hilt_DarthVader_off.png"
+            anchors.centerIn: parent
+            source: core.lightsaberPower ? "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_on.png" : "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_off.png"
         }
     }
     ToolBar {

@@ -131,6 +131,21 @@ Page {
             SettingsSeparator{
             }
 
+            Row{
+                id: hiltCharacterRow
+                spacing: 15
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                HiltButton{
+                    character: "LukeSkywalker"
+                }
+                HiltButton{
+                    character: "DarthVader"
+                }
+            }
+            SettingsSeparator{
+            }
+
         }
     }
     ToolBar {
