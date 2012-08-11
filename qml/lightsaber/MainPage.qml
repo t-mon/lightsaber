@@ -53,8 +53,8 @@ Page {
         color: "transparent"
 
         Image {
-            height: 170
-            width: 50
+            height: 180
+            width: 60
             id: lightsaberImageOff
             anchors.centerIn: parent
             source: core.lightsaberPower ? "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_on.png" : "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_off.png"

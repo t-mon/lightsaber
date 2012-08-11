@@ -143,6 +143,14 @@ Page {
                     character: "DarthVader"
                 }
             }
+
+            Label {
+                id: hiltCharacterLabel
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: LightsaberSettings.hiltCharacter
+
+            }
+
             SettingsSeparator{
             }
 
