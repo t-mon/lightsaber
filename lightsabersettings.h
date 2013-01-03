@@ -1,3 +1,22 @@
+/*  Lightsaber
+ *
+ *  Copyright (C) 2012 Simon Stuerz
+ *  stuerz.simon@gmail.com
+ *
+ *  Lightsaber is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Lightsaber is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #ifndef LIGHTSABERSETTINGS_H
 #define LIGHTSABERSETTINGS_H
 
@@ -14,7 +33,6 @@ class LightsaberSettings : public QObject
     Q_PROPERTY(QString lightsaberColor READ lightsaberColor WRITE setLightsaberColor NOTIFY lightsaberColorChanged())
     Q_PROPERTY(QString hiltCharacter READ hiltCharacter WRITE setHiltCharacter NOTIFY hiltCharacterChanged())
     Q_PROPERTY(bool vibrationOnOff READ vibrationOnOff WRITE setVibrationOnOff NOTIFY vibrationOnOffChanged())
-
 
 public:
     explicit LightsaberSettings(QObject *parent = 0);
@@ -42,8 +60,6 @@ public:
     bool vibrationOnOff();
     void setVibrationOnOff(bool vibrationOnOff);
 
-
-
 signals:
     void lightsaberHitSensChanged();
     void lightsaberSwingSensChanged();
@@ -54,12 +70,7 @@ signals:
     void vibrationOnOffChanged();
 
 private:
-    QSettings *m_settings;
-
-private slots:
-
-
-    
+    QSettings *m_settings;    
 };
 
 #endif // LIGHTSABERSETTINGS_H
