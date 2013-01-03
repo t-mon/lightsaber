@@ -44,19 +44,19 @@ Page {
 
             CheckBox{
                 id: displaySuspendState
-                text: displaySuspendState.checked ? "Screensaver Off" : "Screensaver On"
+                text: "Disable Screensaver"
                 checked: LightsaberSettings.keepDisplayOn
                 //onCheckedChanged: lightsaberSettings.keepDisplayOn = displaySuspendState.checked
             }
             CheckBox{
                 id: showStatusBarState
-                text: showStatusBarState.checked ? "Show statusbar On" : "Show statusbar Off"
+                text: "Show statusbar"
                 checked: LightsaberSettings.showStatusBar
                 //onCheckedChanged: lightsaberSettings.showStatusBar = showStatusBarState.checked
             }
             CheckBox{
                 id: vibrationState
-                text: vibrationState.checked ? "Vibration On" : "Vibration Off"
+                text: "Enable Vibration"
                 checked: LightsaberSettings.vibrationOnOff
             }
 
@@ -65,7 +65,7 @@ Page {
 
             Label {
                 anchors.left: parent.left
-                text: "Lightsaber hit-sensitivity"
+                text: "Hit-sensitivity"
             }
 
             Slider {
@@ -91,7 +91,7 @@ Page {
 
             Label {
                 anchors.left: parent.left
-                text: "Lightsaber swing-sensitivity"
+                text: "Swing-sensitivity"
             }
 
             Slider {
@@ -193,14 +193,11 @@ Page {
         }
 
         ToolIcon {
-            platformIconId: "toolbar-view-menu"
+            platformIconId: "toolbar-info"
             anchors.right: parent.right
             onClicked: {
-                if(myMenu.status == DialogStatus.Open){
-                    myMenu.close();
-                }else{
-                    myMenu.open()
-                }
+                Dialog
+
             }
         }
     }

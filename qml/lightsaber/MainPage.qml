@@ -34,6 +34,50 @@ Page {
 
     property string lightsabercolor : LightsaberSettings.lightsaberColor
 
+    Item{
+        id:arrowsItem
+        anchors.right: parent.right
+        anchors.top: parent.top
+        opacity: 0
+
+        Image{
+            id: firstArrow
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.topMargin: 40
+            source: "image://theme/icon-m-toolbar-mediacontrol-play-white"
+        }
+
+        Image{
+            id: secArrowArrow
+            anchors.right: parent.right
+            anchors.top: firstArrow.bottom
+            anchors.topMargin: 45
+            source: "image://theme/icon-m-toolbar-mediacontrol-play-white"
+        }
+    }
+
+
+
+    SequentialAnimation{
+        id: helpAnimation
+        loops: 2
+        NumberAnimation{
+            target: arrowsItem
+            properties: "opacity"
+            duration: 700
+            from: 0
+            to: 0.8
+        }
+        NumberAnimation{
+            target: arrowsItem
+            properties: "opacity"
+            duration: 700
+            from: 0.8
+            to: 0
+        }
+    }
+
     Rectangle{
         id: swordRectangle
         height: 630
@@ -78,11 +122,18 @@ Page {
             anchors.centerIn: parent
             source: core.lightsaberPower ? "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_on.png" : "lightsaber_hilt_" + LightsaberSettings.hiltCharacter + "_off.png"
         }
+        MouseArea{
+            id: hiltMouseArea
+            anchors.fill: parent
+
+            onClicked: helpAnimation.start()
+        }
     }
     ToolBar {
         id: commonTools
 
         ToolIcon {
+            id: backToolIcon
             platformIconId: "toolbar-settings"
             anchors.left: parent.left
             onClicked: {
@@ -92,14 +143,18 @@ Page {
             }
         }
 
-        ToolIcon {
-            platformIconId: "toolbar-view-menu"
+        Image {
+            source: "image://theme/icon-m-content-description-inverse"
+            width: 48
+            height: 48
+            anchors.verticalCenter: backToolIcon.verticalCenter
             anchors.right: parent.right
-            onClicked: {
-                if(myMenu.status == DialogStatus.Open){
-                    myMenu.close();
-                }else{
-                    myMenu.open()
+            anchors.rightMargin: 16
+            MouseArea{
+                anchors.fill: parent
+                anchors.margins: -16
+                onClicked: {
+                    aboutDialog.open();
                 }
             }
         }

@@ -42,7 +42,7 @@ PageStackWindow {
     QueryDialog {
         id: aboutDialog
         titleText: "Lightsaber"
-        message: "C 2012 Simon Stürz\nV 0.0.1\n\nThis is a smal app which should give you the feeling that your N9 is a lightsaber.\n\nThe sounds for this app are from *** and are under the ***licence avalable on the homepage *** ."
+        message: "C 2012 Simon Stürz\nV 0.1\n\nThis application turns your Nokia N9/950 into a lightsaber.\n\nMAY THE SOURCE BE WITH YOU!\ngitorious.org/lightsaberharmattan\n\nThanks to www.MediaCollege.com for the soundeffects."
     }
 
     Menu {
